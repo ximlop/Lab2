@@ -4,7 +4,7 @@ public class Parque {
     private String nombre;
     private int id;
     private String encargado;
-    private PuntoAcceso[] accesos;
+    private PuntoAcceso[] accesos = new PuntoAcceso[5];
 
     public Parque(int id, String nombre, String encargado){
         this.id = id;

@@ -1,5 +1,5 @@
 package model;
- 
+
 import java.util.ArrayList;
 
 public class PuntoAcceso {
@@ -16,10 +16,6 @@ public class PuntoAcceso {
         this.ubicacion = ubicacion;
         this.capacidadHora = capacidadHora;
         this.estado = estado;
-    }
-
-    public void VerificarPosicion(int posicion){
-
     }
 
     public int getCodigo(){
