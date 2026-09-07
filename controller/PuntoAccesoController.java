@@ -1,23 +1,21 @@
 package controller;
-import model.Parque;
 
 import model.PuntoAcceso;
 
 public class PuntoAccesoController {
-    private Parque parque;
+    private ParqueController parqueController;
 
-    public PuntoAccesoController() {
-        ParqueController parqueController = new ParqueController();
-        parque = parqueController.getParque();
+    public PuntoAccesoController(ParqueController parqueController) {
+        this.parqueController = parqueController;
     }
 
     public void agregarPuntoAcceso(int index, int codigo, String nombre, String ubicacion, int capacidadHora, boolean estado){
         PuntoAcceso accceso = new PuntoAcceso(codigo, nombre, ubicacion, capacidadHora, estado);
-        parque.setAcceso(index, accceso);
+        parqueController.getParque().setAcceso(index, accceso);
     }
 
     public boolean verificarParqueCreado(){
-        if(parque != null){
+        if(parqueController.getParque() != null){
             return true;
         }
         return false;

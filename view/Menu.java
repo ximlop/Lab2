@@ -16,23 +16,34 @@ public class Menu {
         System.out.println("5. Salir");
     }
 
+    ParqueView parqueView = new ParqueView();
+    PuntoAccesoView puntoAccesoView = new PuntoAccesoView(parqueView);
+
+
     public void inicio(){
-        
         while(running){
             showOpciones();
             seleccion = scanner.nextInt();
+            scanner.nextLine();
             try {
                 switch (seleccion){
                     case 5:
                         running = false;
                         break;
                     case 1:
-                        ParqueView parqueView = new ParqueView();
-                        parqueView.mostrarParqueView();
+                        parqueView.mostrarParqueView(scanner);
                         break;
                     case 2:
-                        PuntoAccesoView puntoAccesoView = new PuntoAccesoView();
-                        puntoAccesoView.mostrarPuntoAccesoView(scanner);
+                        puntoAccesoView.mostrarPuntoAccesoView(scanner); //TERMINAR
+                        break;
+                    case 3:
+                        System.out.println("Gestionar visitantes"); //TERMINAR
+                        break;
+                    case 4:
+                        parqueView.mostrarParqueInfo(); //TERMINAR
+                        break;
+                    default:
+                        System.out.println("Opción inválida. Por favor, seleccione una opción válida.");
                         break;
                 }
             }
