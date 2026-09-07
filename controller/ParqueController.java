@@ -6,13 +6,11 @@ public class ParqueController {
     private Parque parque;
 
     public void crearParque(String nombre, int id, String encargado){
-        Parque parque = new Parque(id, nombre, encargado);
-        setParque(parque);
+        parque = new Parque(id, nombre, encargado);
     }
 
-    private Parque setParque(Parque parque){
-        this.parque = parque;
-        return this.parque;
+    public Parque getParque(){
+        return parque;
     }
 
     

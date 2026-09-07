@@ -40,7 +40,9 @@ public class Parque {
         return accesos;
     }
 
-    
+    public void setAcceso(int index, PuntoAcceso acceso){
+        this.accesos[index] = acceso;
+    }
 
 
 

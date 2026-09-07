@@ -21,7 +21,7 @@ public class ParqueView {
         ParqueController parqueController = new ParqueController();
         parqueController.crearParque(nombre, id, encargado);
 
-        
+        scanner.close();
     
     }
 

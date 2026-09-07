@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Menu {
     Scanner scanner = new Scanner(System.in);
     Boolean running = true;
+    private int seleccion;
 
     private void showOpciones() {
         System.out.println("\n--- MENÚ PARQUE UNIVERSITARIO DE ATRACCIONES ---");
@@ -19,7 +20,7 @@ public class Menu {
         
         while(running){
             showOpciones();
-            int seleccion = scanner.nextInt();
+            seleccion = scanner.nextInt();
             try {
                 switch (seleccion){
                     case 5:
@@ -28,6 +29,10 @@ public class Menu {
                     case 1:
                         ParqueView parqueView = new ParqueView();
                         parqueView.mostrarParqueView();
+                        break;
+                    case 2:
+                        PuntoAccesoView puntoAccesoView = new PuntoAccesoView();
+                        puntoAccesoView.mostrarPuntoAccesoView(scanner);
                         break;
                 }
             }
