@@ -1,10 +1,13 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Parque {
     private String nombre;
     private int id;
     private String encargado;
     private PuntoAcceso[] accesos = new PuntoAcceso[5];
+    private ArrayList<Visitante> visitantes = new ArrayList<>();
 
     public Parque(int id, String nombre, String encargado){
         this.id = id;
@@ -44,6 +47,12 @@ public class Parque {
         this.accesos[index] = acceso;
     }
 
+    public ArrayList<Visitante> getVisitante(){
+        return visitantes;
+    }
 
+    public void addVisitante(Visitante visitante){
+        this.visitantes.add(visitante);
+    }
 
 }

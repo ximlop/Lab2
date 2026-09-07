@@ -5,8 +5,8 @@ import java.util.Scanner;
 import controller.PuntoAccesoController;
 
 public class PuntoAccesoView {
-    boolean running = true;
-    PuntoAccesoController controller;
+    private boolean running = true;
+    private PuntoAccesoController controller;
     private int seleccion;
 
     public PuntoAccesoView(ParqueView parqueView) {
@@ -31,6 +31,7 @@ public class PuntoAccesoView {
         while(running){
             showOpcionesPuntosAcceso();
             seleccion = scanner.nextInt();
+            scanner.nextLine();
             switch (seleccion) {
                 case 6:
                     running = false;

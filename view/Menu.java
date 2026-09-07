@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Menu {
     Scanner scanner = new Scanner(System.in);
-    Boolean running = true;
+    private boolean running = true;
     private int seleccion;
 
     private void showOpciones() {
@@ -18,6 +18,7 @@ public class Menu {
 
     ParqueView parqueView = new ParqueView();
     PuntoAccesoView puntoAccesoView = new PuntoAccesoView(parqueView);
+    VisitanteView visitanteView = new VisitanteView(parqueView);
 
 
     public void inicio(){
@@ -37,7 +38,7 @@ public class Menu {
                         puntoAccesoView.mostrarPuntoAccesoView(scanner); //TERMINAR
                         break;
                     case 3:
-                        System.out.println("Gestionar visitantes"); //TERMINAR
+                        visitanteView.mostrarVisitanteView(scanner); //TERMINAR
                         break;
                     case 4:
                         parqueView.mostrarParqueInfo(); //TERMINAR
