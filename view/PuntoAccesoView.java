@@ -1,8 +1,7 @@
 package view;
 
-import java.util.Scanner;
-
 import controller.PuntoAccesoController;
+import java.util.Scanner;
 
 public class PuntoAccesoView {
     private boolean running = true;
@@ -62,10 +61,27 @@ public class PuntoAccesoView {
                     System.out.println("Consultar un punto de acceso"); //TERMINAR
                     break;
                 case 4:
-                    System.out.println("Modificar punto de acceso"); //TERMINAR
+                    System.out.println("Modificar punto de acceso");
+                    System.out.println("Ingrese la posición del Punto de Acceso");
+                    int nuevaPosision = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.println("Ingrese la capacidad de horas a modificar");
+                    int nuevaCapacidadHora = scanner.nextInt();
+                    scanner.nextLine();
+                    System.out.println("Ingrese nuevo estado a modificar");
+                    boolean nuevoEstado = scanner.nextBoolean();
+                    scanner.nextLine();
+
+                    controller.modificarPuntoAcceso(nuevaPosision, nuevaCapacidadHora, nuevoEstado);
+                    System.out.println("Punto de Acceso modificado");
                     break;
                 case 5:
-                    System.out.println("Cerrar punto de acceso"); //TERMINAR
+                    System.out.println("Cerrar punto de acceso");
+                    System.out.println("Ingrese la posición del punto de acceso para cerrarlo");
+                    int posicionCerrar = scanner.nextInt();
+                    scanner.nextLine();
+                    controller.cerrarPuntoAcceso(posicionCerrar);
+                    System.out.println("Punto de acceso cerrado");
                     break;
                 default:
                     System.out.println("Opción inválida. Por favor, seleccione una opción válida.");
