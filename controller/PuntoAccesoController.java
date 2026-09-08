@@ -38,12 +38,15 @@ public class PuntoAccesoController {
     public void consultarPuntoAcceso(int index){
         PuntoAcceso[] accesos = parqueController.getParque().getAcceso();
         PuntoAcceso acceso = accesos[index];
-
-        System.out.printf("Información sobre Punto de Acceso\n");
-        System.out.printf("Nombre: %s\n", acceso.getNombrePuntoAcceso());
-        System.out.printf("Ubicación: %s\n", acceso.getUbicacion());
-        System.out.printf("Capacidad por hora: %d\n", acceso.getCapacidadHora());
-        System.out.printf("Estado: %s\n", acceso.getEstado() ? "Abierto" : "Cerrado");
+        if (acceso != null) {
+            System.out.printf("Información sobre Punto de Acceso\n");
+            System.out.printf("Nombre: %s\n", acceso.getNombrePuntoAcceso());
+            System.out.printf("Ubicación: %s\n", acceso.getUbicacion());
+            System.out.printf("Capacidad por hora: %d\n", acceso.getCapacidadHora());
+            System.out.printf("Estado: %s\n", acceso.getEstado() ? "Abierto" : "Cerrado");
+            return;
+        }
+        System.out.printf("No hay punto de acceso en la posición %d\n", index);
     }
 
 

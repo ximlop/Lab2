@@ -5,7 +5,7 @@ import java.util.Scanner;
 import controller.VisitanteController;
 
 public class VisitanteView {
-    private boolean running = true;
+    private boolean running;
     public VisitanteController controller;
     private int seleccion;
 
@@ -23,12 +23,19 @@ public class VisitanteView {
         System.out.println("6. Regresar al menú principal");
     }
 
+    private String nombre;
+    private int id;
+    private int edad;
+    private int cantidadAtraccion;
+    private int puntos;
+
     public void mostrarVisitanteView(Scanner scanner){
         if (!controller.verificarParqueCreado()) {
             System.out.println("No se ha creado un parque. Por favor, cree un parque primero.");
             return;
         }
 
+        running = true;
         while(running){
             showOpcionesVisitantes();
             seleccion = scanner.nextInt();
@@ -42,31 +49,35 @@ public class VisitanteView {
                     break;
                 case 1:
                     System.out.println("Ingrese el nombre del visitante");
-                    String nombre = scanner.nextLine();
+                    nombre = scanner.nextLine();
 
                     System.out.println("Ingrese el ID del visitante");
-                    int id = scanner.nextInt();
+                    id = scanner.nextInt();
                     scanner.nextLine();
 
                     System.out.println("Ingrese la edad del visitante");
-                    int edad = scanner.nextInt();
+                    edad = scanner.nextInt();
                     scanner.nextLine();
 
                     System.out.println("Ingrese la cantidad de atracciones visitadas");
-                    int cantidadAtraccion = scanner.nextInt();
+                    cantidadAtraccion = scanner.nextInt();
                     scanner.nextLine();
 
                     System.out.println("Ingrese los puntos del visitante");
-                    int puntos = scanner.nextInt();
+                    puntos = scanner.nextInt();
                     scanner.nextLine();
 
                     controller.agregarVisitante(nombre, id, edad, cantidadAtraccion, puntos);
                     break;
                 case 2:
-                    
+                    controller.consultarVisitantes();
                     break;
                 case 3:
-                    
+                    System.out.println("Ingrese el ID del visitante a buscar");
+                    id = scanner.nextInt();
+                    scanner.nextLine();
+
+                    controller.buscarVisitante(id);
                     break;
                 case 4:
                     System.out.println("Modificar visitante"); //TERMINAR

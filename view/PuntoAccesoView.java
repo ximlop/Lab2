@@ -5,7 +5,7 @@ import java.util.Scanner;
 import controller.PuntoAccesoController;
 
 public class PuntoAccesoView {
-    private boolean running = true;
+    private boolean running;
     private PuntoAccesoController controller;
     private int seleccion;
 
@@ -34,6 +34,7 @@ public class PuntoAccesoView {
             System.out.println("No se ha creado un parque. Por favor, cree un parque primero.");
             return;
         }
+        running = true;
         while(running){
             showOpcionesPuntosAcceso();
             seleccion = scanner.nextInt();
