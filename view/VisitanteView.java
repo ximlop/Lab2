@@ -63,10 +63,10 @@ public class VisitanteView {
                     controller.agregarVisitante(nombre, id, edad, cantidadAtraccion, puntos);
                     break;
                 case 2:
-                    System.out.println("Consultar visitantes"); //TERMINAR
+                    
                     break;
                 case 3:
-                    System.out.println("Buscar visitante"); //TERMINAR
+                    
                     break;
                 case 4:
                     System.out.println("Modificar visitante"); //TERMINAR

@@ -23,6 +23,12 @@ public class PuntoAccesoView {
         System.out.println("6. Regresar al menú principal");
     }
 
+    private int codigo;
+    private String nombre;
+    private String ubicacion;
+    private int capacidadHora;
+    private boolean estado;
+
     public void mostrarPuntoAccesoView(Scanner scanner) {
         if (!controller.verificarParqueCreado()) {
             System.out.println("No se ha creado un parque. Por favor, cree un parque primero.");
@@ -38,17 +44,17 @@ public class PuntoAccesoView {
                     break;
                 case 1:
                     System.out.println("Ingrese el código del punto de acceso");
-                    int codigo = scanner.nextInt();
+                    codigo = scanner.nextInt();
                     scanner.nextLine();
                     System.out.println("Ingrese el nombre del punto de acceso");
-                    String nombre = scanner.nextLine();
+                    nombre = scanner.nextLine();
                     System.out.println("Ingrese la ubicación del punto de acceso");
-                    String ubicacion = scanner.nextLine();
+                    ubicacion = scanner.nextLine();
                     System.out.println("Ingrese la capacidad por hora del punto de acceso");
-                    int capacidadHora = scanner.nextInt();
+                    capacidadHora = scanner.nextInt();
                     scanner.nextLine();
                     System.out.println("Ingrese el estado del punto de acceso (true/false)");
-                    boolean estado = scanner.nextBoolean();
+                    estado = scanner.nextBoolean();
 
                     System.out.println("Ingrese el índice del punto de acceso (0-4)");
                     int index = scanner.nextInt();
@@ -56,10 +62,13 @@ public class PuntoAccesoView {
                     controller.agregarPuntoAcceso(index, codigo, nombre, ubicacion, capacidadHora, estado);
                     break;
                 case 2:
-                    System.out.println("Consultar puntos de acceso"); //TERMINAR
+                    controller.consultarPuntosAcceso();
                     break;
                 case 3:
-                    System.out.println("Consultar un punto de acceso"); //TERMINAR
+                    System.out.println("Ingrese el índice del punto de acceso (0-4)");
+                    index = scanner.nextInt();
+                    scanner.nextLine();
+                    controller.consultarPuntoAcceso(index);
                     break;
                 case 4:
                     System.out.println("Modificar punto de acceso"); //TERMINAR
