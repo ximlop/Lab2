@@ -1,8 +1,7 @@
 package view;
 
-import java.util.Scanner;
-
 import controller.PuntoAccesoController;
+import java.util.Scanner;
 
 public class PuntoAccesoView {
     private boolean running = true;
@@ -62,7 +61,7 @@ public class PuntoAccesoView {
                     System.out.println("Consultar un punto de acceso"); //TERMINAR
                     break;
                 case 4:
-                    System.out.println("Modificar punto de acceso"); //TERMINAR
+                    System.out.println("Modificar punto de acceso");
                     break;
                 case 5:
                     System.out.println("Cerrar punto de acceso"); //TERMINAR

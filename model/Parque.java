@@ -55,4 +55,25 @@ public class Parque {
         this.visitantes.add(visitante);
     }
 
+    public boolean posicionValida(int index){
+        return index >= 0 && index < accesos.length;
+    }
+
+    public boolean posicionDisponible(int index){
+        return accesos[index] == null;
+    }
+
+    public Visitante buscarVisitante(int codigoEntrada){
+        for(Visitante v : visitantes){
+            if(v.getCodigoEntrada() == codigoEntrada){
+                return v;
+            }
+        }
+        return null;
+    }
+
+    public void eliminarVisitante(Visitante visitante){
+        this.visitantes.remove(visitante);
+    }
+
 }

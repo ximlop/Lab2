@@ -8,6 +8,16 @@ public class Visitante {
     private int puntos;
 
     public Visitante(String nombre, int codigoEntrada, int edad, int cantidadAtraccion, int puntos){
+        if(edad<= 0){
+            throw new IllegalArgumentException("Ingrese edad mayor a cero");
+        }
+        if(cantidadAtraccion < 0){
+            throw new IllegalArgumentException("No puede haber una cantidad de atracciones negativas");
+        }
+        if(puntos < 0){
+            throw new IllegalArgumentException("No puede haber puntos negativos");
+        }
+
         this.nombre = nombre;
         this.codigoEntrada = codigoEntrada;
         this.edad = edad;
@@ -36,6 +46,9 @@ public class Visitante {
     }
 
     public void setEdad(int edad){
+        if(edad <= 0){
+            throw new IllegalArgumentException("Edad mayor a cero");
+        }
         this.edad = edad;
     }
 
@@ -44,6 +57,9 @@ public class Visitante {
     }
 
     public void setCantidadAtraccion(int cantidadAtraccion){
+        if(cantidadAtraccion < 0){
+            throw new IllegalArgumentException("No puede haber una cantidad de atracciones negativas");
+        }
         this.cantidadAtraccion = cantidadAtraccion;
     }
 
@@ -52,6 +68,10 @@ public class Visitante {
     }
 
     public void setPuntos(int puntos){
+        if(puntos < 0){
+            throw new IllegalArgumentException("No puede haber puntos negativos");
+        }
+
         this.puntos = puntos;
     }
 
