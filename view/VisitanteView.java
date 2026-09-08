@@ -1,8 +1,7 @@
 package view;
 
-import java.util.Scanner;
-
 import controller.VisitanteController;
+import java.util.Scanner;
 
 public class VisitanteView {
     private boolean running = true;
@@ -68,11 +67,40 @@ public class VisitanteView {
                 case 3:
                     System.out.println("Buscar visitante"); //TERMINAR
                     break;
+
                 case 4:
-                    System.out.println("Modificar visitante"); //TERMINAR
+                    System.out.println("Modificar visitante");
+                    System.out.println("Ingrese el código de entrada del visitante para modificar");
+                    int codigoModificar = scanner.nextInt();
+                    scanner.nextLine();
+
+                    System.out.println("Ingrese el nuevo nombre del visitante");
+                    String nuevoNombre = scanner.nextLine();
+
+                    System.out.println("Ingrese la nueva edad del visitante");
+                    int nuevaEdad = scanner.nextInt();
+                    scanner.nextLine();
+
+                    System.out.println("Ingrese la nueva cantidad de atracciones visitadas");
+                    int nuevaCantidadAtraccion = scanner.nextInt();
+                    scanner.nextLine();
+
+                    System.out.println("Ingrese los nuevos puntos del visitante");
+                    int nuevosPuntos = scanner.nextInt();
+                    scanner.nextLine();
+
+                    controller.modificarVisitante(codigoModificar, nuevoNombre, nuevaEdad, nuevaCantidadAtraccion, nuevosPuntos);
+                    System.out.println("Visitante modificado correctamente");
                     break;
+
                 case 5:
-                    System.out.println("Eliminar visitante"); //TERMINAR
+                    System.out.println("Eliminar visitante");
+                    System.out.println("Ingrese el código de la entrada del visitante para eliminar");
+                    int codigoEliminar = scanner.nextInt();
+                    scanner.nextLine();
+
+                    controller.eliminarVisitante(codigoEliminar);
+                    System.out.println("Visitante eliminado");
                     break;
             }
         }
