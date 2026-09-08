@@ -35,13 +35,13 @@ public class Menu {
                         parqueView.mostrarParqueView(scanner);
                         break;
                     case 2:
-                        puntoAccesoView.mostrarPuntoAccesoView(scanner); //TERMINAR
+                        puntoAccesoView.mostrarPuntoAccesoView(scanner);
                         break;
                     case 3:
-                        visitanteView.mostrarVisitanteView(scanner); //TERMINAR
+                        visitanteView.mostrarVisitanteView(scanner);
                         break;
                     case 4:
-                        parqueView.mostrarParqueInfo(); //TERMINAR
+                        parqueView.mostrarParqueInfo();
                         break;
                     default:
                         System.out.println("Opción inválida. Por favor, seleccione una opción válida.");
